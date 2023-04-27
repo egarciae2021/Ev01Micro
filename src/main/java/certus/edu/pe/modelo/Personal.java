@@ -113,5 +113,8 @@ public class Personal {
     public void setOcupacion(String Cargo) {
         this.Cargo = Cargo;
     }
+    public String getCargo() {
+        return Cargo;
+    }
 }
 

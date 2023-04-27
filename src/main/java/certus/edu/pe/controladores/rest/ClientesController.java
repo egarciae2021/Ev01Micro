@@ -54,12 +54,12 @@ public class ClientesController{
         if (clienteExistente.isPresent()) {
             Clientes clienteActualizado = clienteExistente.get();
 
-            clienteActualizado.setNombre(clienteActualizado.getNombre());
-            clienteActualizado.setApellido(clienteActualizado.getApellido());
-            clienteActualizado.setEdad(clienteActualizado.getEdad());
-            clienteActualizado.setCelular(clienteActualizado.getCelular());
-            clienteActualizado.setCorreo(clienteActualizado.getCorreo());
-            clienteActualizado.setDireccion(clienteActualizado.getDireccion());
+            clienteActualizado.setNombre( cliente.getNombre());
+            clienteActualizado.setApellido( cliente.getApellido());
+            clienteActualizado.setEdad( cliente.getEdad());
+            clienteActualizado.setCelular( cliente.getCelular());
+            clienteActualizado.setCorreo( cliente.getCorreo());
+            clienteActualizado.setDireccion( cliente.getDireccion());
             clienteService.save(clienteActualizado);
 
             return new ResponseEntity<Void>(HttpStatus.OK);
