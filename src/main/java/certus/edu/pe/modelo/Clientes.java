@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name = "Clientes")
 public class Clientes {
@@ -33,7 +34,7 @@ public class Clientes {
     @Column(name = "Direccion", length = 100)
     private String direccion;
 
-    // Constructor vacío
+    
     public Clientes() {
     }
 

@@ -1,5 +1,6 @@
 package certus.edu.pe.modelo;
 
+
 import java.sql.Date;
 
 import jakarta.persistence.Column;
@@ -9,106 +10,110 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table; 
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
- 
+
 
 @Entity
-@Table(name = "Reserva")
-public class Reservas {
+@Table(name = "Reservas")
+ public class Reservas {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdReservas")
-    private int IdReservas;
-
-    
-    @JoinColumn(name = "Id_Cliente", referencedColumnName = "IdCliente", nullable = false)
-    @Column(name = "Id_Cliente")
-    private Integer Id_Cliente;
-    
-     
-    @JoinColumn(name = "Id_Auto", referencedColumnName = "IdAuto", nullable = false)
-    @Column(name = "Id_Auto")
-    private Integer Id_Auto;
-    
-
-    @JoinColumn(name = "Id_Sedes", referencedColumnName = "IdSedes", nullable = false)
-    @Column(name = "Id_Sedes")
-    private Integer Id_Sedes;
-    
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    @Column(name = "IdReservas")
+	    private Integer idReservas;
  
-    @JoinColumn(name = "Id_Personal", referencedColumnName = "IdPersonal", nullable = false)
-    @Column(name = "Id_Personal")
-    private Integer Id_Personal;
-    
-    @Column(name = "Fecha")
-    private Date Fecha;
-     
-     
-    public Reservas() {
-    }
+		@Column(name = "Id_cliente")
+	    private Integer Id_cliente;
+		 
+	     
+	    @Column(name = "Id_auto")
+	    private Integer Id_auto;
+	    
  
-    public Reservas(Integer Id_Auto, Integer Id_Sedes, Integer Id_Personal,Date Fecha) {
-        this.Id_Auto = Id_Auto;
-        this.Id_Sedes = Id_Sedes;
-        this.Id_Personal = Id_Personal;
-        this.Fecha = Fecha;
-    }
+	    @Column(name = "Id_sedes")
+	    private Integer Id_sedes;
+	   
+	    @Column(name = "Id_personal")
+	    private Integer Id_personal;
+	    
+	    @Column(name = "Fecha")
+	    private Date Fecha;
+	     
+		 
+	    public Reservas() {
+	    }
 
-	public int getIdReservas() {
-		return IdReservas;
-	}
 
-	public void setIdReservas(int idReservas) {
-		IdReservas = idReservas;
-	}
+		public Integer getIdReservas() {
+			return idReservas;
+		}
 
-	public Integer getId_Cliente() {
-		return Id_Cliente;
-	}
 
-	public void setId_Cliente(Integer id_Cliente) {
-		Id_Cliente = id_Cliente;
-	}
+		public void setIdReservas(Integer idReservas) {
+			this.idReservas = idReservas;
+		}
 
-	public Integer getId_Auto() {
-		return Id_Auto;
-	}
 
-	public void setId_Auto(Integer id_Auto) {
-		Id_Auto = id_Auto;
-	}
+		public Integer getId_cliente() {
+			return Id_cliente;
+		}
 
-	public Integer getId_Sedes() {
-		return Id_Sedes;
-	}
 
-	public void setId_Sedes(Integer id_Sedes) {
-		Id_Sedes = id_Sedes;
-	}
+		public void setId_cliente(Integer id_cliente) {
+			Id_cliente = id_cliente;
+		}
 
-	public Integer getId_Personal() {
-		return Id_Personal;
-	}
 
-	public void setId_Personal(Integer id_Personal) {
-		Id_Personal = id_Personal;
-	}
+		public Integer getId_auto() {
+			return Id_auto;
+		}
 
-	public Date getFecha() {
-		return Fecha;
-	}
 
-	public void setFecha(Date fecha) {
-		Fecha = fecha;
-	}
- 
-    
-    
-    
+		public void setId_auto(Integer id_auto) {
+			Id_auto = id_auto;
+		}
+
+
+		public Integer getId_sedes() {
+			return Id_sedes;
+		}
+
+
+		public void setId_sedes(Integer id_sedes) {
+			Id_sedes = id_sedes;
+		}
+
+
+		public Integer getId_personal() {
+			return Id_personal;
+		}
+
+
+		public void setId_personal(Integer id_personal) {
+			Id_personal = id_personal;
+		}
+
+
+		public Date getFecha() {
+			return Fecha;
+		}
+
+
+		public void setFecha(Date fecha) {
+			Fecha = fecha;
+		}
+
+
+		public Reservas(Integer idReservas, Integer id_cliente, Integer id_auto, Integer id_sedes, Integer id_personal,
+				Date fecha) {
+			super();
+			this.idReservas = idReservas;
+			Id_cliente = id_cliente;
+			Id_auto = id_auto;
+			Id_sedes = id_sedes;
+			Id_personal = id_personal;
+			Fecha = fecha;
+		}
+
+	   
 }

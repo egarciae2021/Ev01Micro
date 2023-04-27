@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import certus.edu.pe.modelo.Serviciodetalle;
-import certus.edu.pe.modelo.Vehiculos;
 import certus.edu.pe.repositorios.ServicioDetalleRepositorio;
-import certus.edu.pe.repositorios.VehiculoRepositorio;
 
+@Service
 public class ServiciodetalleService {
 
     @Autowired

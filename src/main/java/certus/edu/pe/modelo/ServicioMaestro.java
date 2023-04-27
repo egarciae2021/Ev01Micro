@@ -6,7 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table; 
+import jakarta.persistence.Table;
+import  certus.edu.pe.modelo.*;
+
 
 @Entity
 @Table(name = "Servicios_maestro")
@@ -26,13 +28,12 @@ public class ServicioMaestro {
     @Column(name = "Repuestos")
     private String repuestos;
 
-    @ManyToOne
-    @JoinColumn(name = "Id_sedes", referencedColumnName = "IdSedes")
-    private Sedes sedes;
+    @Column(name = "Id_sedes")
+    private Integer sedes;
  
     public ServicioMaestro() {}
     
-    public ServicioMaestro(Integer id, String descripcion, Double costo, String repuestos, Sedes sedes) {
+    public ServicioMaestro(Integer id, String descripcion, Double costo, String repuestos, Integer sedes) {
 		super();
 		this.id = id;
 		this.descripcion = descripcion;
@@ -75,11 +76,11 @@ public class ServicioMaestro {
         this.repuestos = repuestos;
     }
 
-    public Sedes getSedes() {
+    public Integer getSedes() {
         return sedes;
     }
 
-    public void setSedes(Sedes sedes) {
+    public void setSedes(Integer sedes) {
         this.sedes = sedes;
     }
 }

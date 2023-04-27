@@ -1,5 +1,6 @@
 package certus.edu.pe.modelo;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,75 +8,79 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table; 
-
+import jakarta.persistence.Table;
+import  certus.edu.pe.modelo.*;
 
 @Entity
-@Table(name = "Encuestas")
+@Table(name = "encuestas")
 public class Encuestas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdEncuestas")
-    private Integer IdEncuestas;
+    @Column(name = "IdEncunestas")
+    private Integer IdEncunestas;
 
     @Column(name = "Calificacion")
     private Integer Calificacion;
 
-
-    @JoinColumn(name = "Id_personal", referencedColumnName = "IdPersonal", nullable = false)
+    @Column(name = "Id_personal")
     private Integer Id_personal;
-
-
-    @JoinColumn(name = "Id_sedes", referencedColumnName = "IdSedes", nullable = false)
-    private Integer Id_sedes;
-
     
+    @Column(name = "Id_sedes")
+    private Integer Id_sedes;
+    
+    
+    // Constructor vacío
     public Encuestas() {
     }
 
-	public Encuestas(Integer idEncuestas, Integer calificacion, Integer id_personal, Integer id_sedes) {
-		super();
-		IdEncuestas = idEncuestas;
-		Calificacion = calificacion;
-		Id_personal = id_personal;
-		Id_sedes = id_sedes;
+
+	public Integer getIdEncunestas() {
+		return IdEncunestas;
 	}
 
-	public Integer getIdEncuestas() {
-		return IdEncuestas;
+
+	public void setIdEncunestas(Integer idEncunestas) {
+		IdEncunestas = idEncunestas;
 	}
 
-	public void setIdEncuestas(Integer idEncuestas) {
-		IdEncuestas = idEncuestas;
-	}
 
 	public Integer getCalificacion() {
 		return Calificacion;
 	}
 
+
 	public void setCalificacion(Integer calificacion) {
 		Calificacion = calificacion;
 	}
+
 
 	public Integer getId_personal() {
 		return Id_personal;
 	}
 
+
+	public Encuestas(Integer idEncunestas, Integer calificacion, Integer id_personal, Integer id_sedes) {
+		super();
+		IdEncunestas = idEncunestas;
+		Calificacion = calificacion;
+		Id_personal = id_personal;
+		Id_sedes = id_sedes;
+	}
+
+
 	public void setId_personal(Integer id_personal) {
 		Id_personal = id_personal;
 	}
+
 
 	public Integer getId_sedes() {
 		return Id_sedes;
 	}
 
+
 	public void setId_sedes(Integer id_sedes) {
 		Id_sedes = id_sedes;
 	}
-    
-    
-    
-    
  
 } 
