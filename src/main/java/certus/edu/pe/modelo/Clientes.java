@@ -1,5 +1,5 @@
 package certus.edu.pe.modelo;
-import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,110 +10,89 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Clientes")
 public class Clientes {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdCliente")
-    private int idCliente;
-
-    @Column(name = "Nombre", nullable = false)
-    private String nombre;
-
-    @Column(name = "Apellido", nullable = false)
-    private String apellido;
-
-    @Column(name = "Edad")
-    private Integer edad;
-
-    @Column(name = "Celular", length = 15)
-    private String celular;
-
-    @Column(name = "Correo", length = 100)
-    private String correo;
-
-    @Column(name = "Direccion", length = 100)
-    private String direccion;
-
+    private Integer IdCliente;
     
-    public Clientes() {
+    private String Nombre;
+    
+    private String Apellido;
+    
+    private Integer Edad;
+
+    private String Celular;
+
+    private String Correo;
+    
+    private String Direccion;
+
+    public Clientes() {} 
+    
+    public Clientes( Integer idCliente, String nombre, String apellido, Integer edad, String celular, String correo, String direccion) {
+		super();
+        IdCliente = idCliente;
+    	Nombre = nombre;
+        Apellido = apellido;
+        Edad = edad;
+        Celular = celular;
+        Correo = correo;
+        Direccion = direccion;
     }
 
-	public Clientes(int idCliente, String nombre, String apellido, Integer edad, String celular, String correo,
-			String direccion) {
-		super();
-		this.idCliente = idCliente;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.edad = edad;
-		this.celular = celular;
-		this.correo = correo;
-		this.direccion = direccion;
-	}
- 
- 
 
-	public int getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public Integer getEdad() {
-		return edad;
-	}
-
-	public void setEdad(Integer edad) {
-		this.edad = edad;
-	}
-
-	public String getCelular() {
-		return celular;
-	}
-
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-	public String getCorreo() {
-		return correo;
-	}
-
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+	public Integer getIdCliente() {
+        return IdCliente;
+    }    
     
+    public void setIdCliente(Integer idCliente) {
+    	IdCliente = idCliente;
+    }
     
-    
-    
-    
-    
-    
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String apellido) {
+        Apellido = apellido;
+    }
+
+    public Integer getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(Integer edad) {
+        Edad = edad;
+    }
+
+    public String getCelular() {
+        return Celular;
+    }
+
+    public void setCelular(String celular) {
+        Celular = celular;
+    }
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String correo) {
+        Correo = correo;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
+    }
 }
-
-
